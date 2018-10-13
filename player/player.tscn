@@ -241,7 +241,7 @@ extents = Vector2( 6, 7 )
 custom_solver_bias = 0.0
 extents = Vector2( 7, 8 )
 
-[node name="player" type="KinematicBody2D" index="0"]
+[node name="player" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -284,7 +284,7 @@ _sections_unfolded = [ "Animation" ]
 visible = false
 shape = SubResource( 13 )
 
-[node name="hitboxe" type="Area2D" parent="." index="3"]
+[node name="hitbox" type="Area2D" parent="." index="3"]
 
 visible = false
 input_pickable = true
@@ -295,7 +295,7 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitboxe" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" index="0"]
 
 shape = SubResource( 14 )
 

@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const TYPE = "ENNEMY"
+const TYPE = "ENEMY"
 const SPEED = 0
 var movedir = Vector2(0,0)
 var knockdir = Vector2(0,0)
@@ -35,10 +35,10 @@ func anim_switch(animation):
 		$anim.play(newanim)
 		
 func damage_loop():
-		if hitstun > 0:
-			hitstun -= 1
-			for body in $hitbox.get_overlapping_bodies():
-				if hitstun == 0 and body.get("DAMAGE") != null and body.get("TYPE") != TYPE:
-					health -= body.get("DAMAGE")
-					hitstun = 10
-					knockdir = transform.origin - body.transform.origin 
+	if hitstun > 0:
+		hitstun -= 1
+	for body in $hitbox.get_overlapping_bodies():
+		if hitstun == 0 and body.get("DAMAGE") != null and body.get("TYPE") != TYPE:
+			health -= body.get("DAMAGE")
+			hitstun = 10
+			knockdir = transform.origin - body.transform.origin 
