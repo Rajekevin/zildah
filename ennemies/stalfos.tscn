@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://ennemies/stalfos.gd" type="Script" id=1]
 [ext_resource path="res://ennemies/stalfaux.png" type="Texture" id=2]
@@ -27,7 +27,12 @@ tracks/0/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 6, 6 )
 
-[node name="stalfos" type="KinematicBody2D"]
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 7, 7 )
+
+[node name="stalfos" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -59,5 +64,20 @@ __meta__ = {
 
 visible = false
 shape = SubResource( 2 )
+
+[node name="hitbox" type="Area2D" parent="." index="3"]
+
+visible = false
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" index="0"]
+
+shape = SubResource( 3 )
 
 

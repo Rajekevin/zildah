@@ -1,12 +1,13 @@
 extends "res://engine/entity.gd"
 
+const TYPE = "PLAYER"
 const SPEED = 70
 
 func _physics_process(delta):
 	controls_loop()
 	movement_loop()
 	spritedir_loop()
-	
+	damage_loop()
 	if is_on_wall():
 		if spritedir == "left" and test_move(transform, Vector2(-1,0)):
 			anim_switch("push")
