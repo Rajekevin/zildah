@@ -22,7 +22,8 @@ func _physics_process(delta):
 	else:
 		anim_switch("idle")
 	
-	print(spritedir)
+	if Input.is_action_just_pressed("w"):
+		use_item(preload("res://items/sword.tscn"))
 
 func controls_loop():
 	var LEFT  =	 Input.is_action_pressed("ui_left")
