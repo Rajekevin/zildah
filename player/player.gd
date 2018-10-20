@@ -25,6 +25,12 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("w"):
 		use_item(preload("res://items/sword.tscn"))
 
+func state_swing():
+		anim_switch("idle")
+		movement_loop()
+		damage_loop()
+		movedir = dir.center
+
 func controls_loop():
 	var LEFT  =	 Input.is_action_pressed("ui_left")
 	var RIGHT =	 Input.is_action_pressed("ui_right")
