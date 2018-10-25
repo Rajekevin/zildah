@@ -8,7 +8,12 @@ var spritedir = "down"
 
 var hitstun  = 0  
 var health   = 1 
+var texture_default = null
+var texture_hurt    = null
 
+func _ready():
+	texture_default = $Sprite.texture
+	texture_hurt = load($Sprite.texture.get_path().replace(".png", "_hurt.png") )
 
 func movement_loop():
 	var motion 
